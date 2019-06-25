@@ -18,6 +18,7 @@ def DEFAULT_COMPILE_SDK_VERSION             = 26
 def DEFAULT_BUILD_TOOLS_VERSION             = "26.0.2"
 def DEFAULT_TARGET_SDK_VERSION              = 26
 def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION    = "12.0.1"
+def DEFAULT_GOOGLE_PLAY_SERVICES_VISION_VERSION    = "16.2.0"
 def DEFAULT_SUPPORT_LIBRARY_VERSION         = "27.1.0"
 
 android {
@@ -50,7 +51,7 @@ repositories {
 }
 
 dependencies {
-  def googlePlayServicesVersion = rootProject.hasProperty('googlePlayServicesVersion')  ? rootProject.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
+  def googlePlayServicesVersion = rootProject.hasProperty('googlePlayServicesVisionVersion')  ? rootProject.googlePlayServicesVisionVersion : rootProject.hasProperty('googlePlayServicesVersion')  ? rootProject.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VISION_VERSION
   def supportLibVersion = rootProject.hasProperty('supportLibVersion')  ? rootProject.supportLibVersion : DEFAULT_SUPPORT_LIBRARY_VERSION
 
   compileOnly 'com.facebook.react:react-native:+'
